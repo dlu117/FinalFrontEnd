@@ -7,8 +7,16 @@ body {
 
 .booklist {
   background-color: #F5F5F5;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: scroll;
-  height: 400px;
+  height: 500px;
+  width: 800px;
 }
 
+
+td.perbook{
+  max-width: 200px;
+  max-height: 200px;
+  overflow: hidden;
+  display: inline-block;
+}

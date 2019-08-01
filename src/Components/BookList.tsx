@@ -33,16 +33,17 @@ export default class BookList extends React.Component<IProps,IState>{
             return response.json();  // convert into JSON format
         }).then((response:any)=>{
             const output:any[] = []
+            
             response.forEach((book:any) => {  
-                const row = (<tr> 
+                const bookitem = (<td className= "perbook"> 
                     <td className="align-middle" onClick={() => this.handleRead(book)}>{book.isRead === true?< Tick />:<TickBorder/>}</td>  
-                    <td className="align-middle" onClick={() => this.props.display(book.thumbnailUrl)}><img src={book.thumbnailUrl} width="80px"/></td>
+                    <td className="align-middle" onClick={() => this.ondisplay(book.thumbnailUrl)}><img src={book.thumbnailUrl} width="80px"/></td>
                     <td className="align-middle" onClick={() => this.deleteBook(book.bookId)}><Close/></td>                    
-                    </tr>)
+                    </td>)
                 if(book.isRead){
-                    output.push(row); // read books are at the bottom of the list 
+                    output.push(bookitem); // read books are at the bottom of the list 
                 }else{               
-                    output.unshift(row)  // adds item to start of list
+                    output.unshift(bookitem)  // adds item to start of list
                 }
             })
             this.setState({bookList:output})
@@ -54,7 +55,12 @@ export default class BookList extends React.Component<IProps,IState>{
             method:"DELETE"
         }).then(()=>{
             this.updateList() // once delete list update list again
+        
         })
+    }
+
+    public ondisplay = (bookUrl:string) => {
+        this.props.display(bookUrl)
     }
 
     public handleRead = (book:any) =>{
@@ -78,9 +84,9 @@ export default class BookList extends React.Component<IProps,IState>{
     public render() {  
         return (
             <div className="booklist">  
-            <h1 className="books-heading">Book Shelf</h1>
-            <table className="table">  
-                {this.state.bookList}
+            <h1 className="books-heading">Book Shelf</h1>  
+            <table className="table" >
+                {this.state.bookList} 
             </table> 
             </div>
         )

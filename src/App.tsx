@@ -1,6 +1,6 @@
 import * as React from 'react';
 import BookList from 'src/Components/BookList';
-import ReactPlayer from 'react-player';
+
 
 
 interface IState {
@@ -53,23 +53,7 @@ class App extends React.Component<{}, IState>{
     
       <div className="container">
         <div className="row">
-          <div className="col-7">
-            <ReactPlayer
-              className="player"
-              controls={true}
-              url={this.state.displayURL}
-              width="100%"
-              height="400px"
-              playing={true}
-              config={{
-                youtube: {
-                  playerVars: { showinfo: 1 },
-                  preload: true
-                }
-              }
-              }
-            />
-          </div>
+         
           <div className="col-5">
           <BookList display={this.updateURL} mount={this.listMounted} />
           </div>
