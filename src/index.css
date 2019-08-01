@@ -13,6 +13,9 @@ body {
   width: 800px;
 }
 
+.books-heading{
+  text-align:center;
+}
 
 td.perbook{
   max-width: 200px;

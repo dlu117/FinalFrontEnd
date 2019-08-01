@@ -4,24 +4,30 @@ import BookList from 'src/Components/BookList';
 
 
 interface IState {
- // displayer: any,
-  updateBookList: any,
-  displayURL: string
-  // videoList: object
+  bookList: object,
+  displayer: any,
+  displayURL: string,
+  updateBookList: any
 }
 
-
+// hjh
 class App extends React.Component<{}, IState>{
   public constructor(props: any) {
     super(props);
     this.state = {
-      // displayer: null,
-      displayURL: "",   // Initial no book displayed
+      bookList: [],
+      displayURL: "https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",   // Initial no book displayed
+      displayer: null,
       updateBookList: null
-     // videoList: []
+     
     }
   }
 
+  public setRef = (playerRef: any) => {
+    this.setState({
+      displayer: playerRef
+    })
+  }
 
   public addVideo = (url: string) => {
     const body = {"url": url}
@@ -52,9 +58,15 @@ class App extends React.Component<{}, IState>{
     return (<div>
     
       <div className="container">
-        <div className="row">
-         
-          <div className="col-5">
+        <div className="row"> 
+        
+          
+              <img src={this.state.displayURL}
+              width="150"
+              height="200px"
+              
+            />
+          <div className="col-4">
           <BookList display={this.updateURL} mount={this.listMounted} />
           </div>
         </div>
