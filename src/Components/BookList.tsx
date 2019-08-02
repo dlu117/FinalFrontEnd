@@ -8,8 +8,10 @@ interface IState{
 }
 
 interface IProps{
-    display:any,   
+    display:any,
+    displayurl:any;
     mount:any,
+    
 }
 
 export default class BookList extends React.Component<IProps,IState>{
@@ -37,9 +39,10 @@ export default class BookList extends React.Component<IProps,IState>{
             response.forEach((book:any) => {  
                 const bookitem = (<td className= "perbook"> 
                     <td className="align-middle" onClick={() => this.handleRead(book)}>{book.isRead === true?< Tick />:<TickBorder/>}</td>  
-                    <td className="align-middle" onDrag={() => this.ondisplay(book.thumbnailUrl)}><img src={book.thumbnailUrl} width="80px"/></td>
+                    <td className="align-middle" onClick={() => this.ondisplay(book.thumbnailUrl,book.webUrl)}><img src={book.thumbnailUrl} width="80px"/></td>
                     <td className="align-middle" onClick={() => this.deleteBook(book.bookId)}><Close/></td>                    
                     </td>)
+
                 if(book.isRead){
                     output.push(bookitem); // read books are at the bottom of the list 
                 }else{               
@@ -49,6 +52,15 @@ export default class BookList extends React.Component<IProps,IState>{
             this.setState({bookList:output})
             });
     }
+ 
+    // need to know the web url of the displayed image 
+
+    public ondisplay = (bookUrl:string, linkUrl:string) => {
+        this.props.display(bookUrl)
+        this.props.displayurl(linkUrl)
+    }
+
+
 
     public deleteBook = (id:any) => {
         fetch("https://bookapidevops.azurewebsites.net/api/Books/"+id,{
@@ -59,9 +71,7 @@ export default class BookList extends React.Component<IProps,IState>{
         })
     }
 
-    public ondisplay = (bookUrl:string) => {
-        this.props.display(bookUrl)
-    }
+ 
 
     public handleRead = (book:any) =>{
         const toSend = [{

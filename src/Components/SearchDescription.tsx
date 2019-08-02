@@ -74,8 +74,6 @@ export default class SearchArea extends React.Component<IProps, IState>{
                         <td> <img src={book.thumbnailUrl} width="30px"/></td>
                         <td>{book.bookTitle}</td>
                     </tr>)
-
-
             })
         });
         if (toRet.length === 0) {
@@ -104,7 +102,7 @@ export default class SearchArea extends React.Component<IProps, IState>{
                         <TextField
                             id="Search-Bar"
                             className="SearchBar"
-                            placeholder="Search Captions"
+                            placeholder="Books by Description"
                             margin="normal"
                             variant="outlined"
                             onChange={(event: any) => this.setState({ input: event.target.value })}
