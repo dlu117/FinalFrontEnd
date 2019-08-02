@@ -1,3 +1,5 @@
+// Searching book by entering a word from description
+
 import { IconButton } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField'
@@ -62,13 +64,18 @@ export default class SearchArea extends React.Component<IProps, IState>{
                 return a.bookTitle.localeCompare(b.bookTitle);
             }
         })
+
         this.state.result.forEach((book: any) => {
-            book.word.forEach((caption: any) => {
+            book.word.forEach((word: any) => {
+
                 toRet.push(
                     <tr onClick={() => this.handleTableClick(book.thumbnailUrl)}>
-                        <td>{caption.word1}</td>
+                        <td>{word.word1}</td>
+                        <td> <img src={book.thumbnailUrl} width="30px"/></td>
                         <td>{book.bookTitle}</td>
                     </tr>)
+
+
             })
         });
         if (toRet.length === 0) {

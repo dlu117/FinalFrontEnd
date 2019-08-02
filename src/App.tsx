@@ -1,4 +1,5 @@
 import * as React from 'react';
+import AddBook from 'src/Components/AddBook';
 import BookList from 'src/Components/BookList';
 import SearchArea from 'src/Components/SearchDescription';
 
@@ -29,7 +30,7 @@ class App extends React.Component<{}, IState>{
     })
   }
 
-  public addVideo = (url: string) => {
+  public addBook = (url: string) => {
     const body = {"url": url}
     fetch("https://bookapidevops.azurewebsites.net/api/Books", {
       body: JSON.stringify(body),
@@ -54,17 +55,17 @@ class App extends React.Component<{}, IState>{
       this.setState({displayURL:url})
     }
   }
+
+ 
+
   public render() {
     return (<div>
-    
+      <AddBook addBook={this.addBook} />
       <div className="container">
         <div className="row"> 
-        
-          
               <img src={this.state.displayURL}
               width="150"
               height="200px"
-              
             />
           <div className="col-4">
           <BookList display={this.updateURL} mount={this.listMounted} />
