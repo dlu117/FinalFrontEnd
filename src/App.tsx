@@ -1,5 +1,6 @@
 import * as React from 'react';
 import BookList from 'src/Components/BookList';
+import SearchArea from 'src/Components/SearchDescription';
 
 
 
@@ -10,13 +11,12 @@ interface IState {
   updateBookList: any
 }
 
-// hjh
 class App extends React.Component<{}, IState>{
   public constructor(props: any) {
     super(props);
     this.state = {
       bookList: [],
-      displayURL: "https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",   // Initial no book displayed
+      displayURL: "",
       displayer: null,
       updateBookList: null
      
@@ -70,7 +70,7 @@ class App extends React.Component<{}, IState>{
           <BookList display={this.updateURL} mount={this.listMounted} />
           </div>
         </div>
-        
+        <SearchArea currentbook={this.state.displayURL} display={this.updateURL} />
       </div>
     </div>)
   }
