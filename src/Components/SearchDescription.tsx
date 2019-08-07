@@ -1,10 +1,12 @@
 // Searching book by entering a word from description
+// Page 1 
 
 import { IconButton } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField'
 import Search from '@material-ui/icons/Search'
 import * as React from 'react'
+
 
 interface IState {
     input: string,
@@ -93,9 +95,10 @@ export default class SearchArea extends React.Component<IProps, IState>{
     public render() {
         return (
             <div className="caption-area">
+                
                 <div className="row">
-                    <div className="col-2 justify-content-center align-self-center">
-                        <h1><span className="red-heading">search</span>caption</h1>
+                    <div className="col-2 align-self-center">
+                        <h1>Search Book Shelf</h1>
                     </div>
                     <div className="col-10">
                         

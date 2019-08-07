@@ -38,9 +38,9 @@ export default class BookList extends React.Component<IProps,IState>{
             
             response.forEach((book:any) => {  
                 const bookitem = (<td className= "perbook"> 
-                    <td className="align-middle" onClick={() => this.handleRead(book)}>{book.isRead === true?< Tick />:<TickBorder/>}</td>  
+                    <td className="align-top" onClick={() => this.handleRead(book)}>{book.isRead === true?< Tick />:<TickBorder/>}</td>  
                     <td className="align-middle" onClick={() => this.ondisplay(book.thumbnailUrl,book.webUrl)}><img src={book.thumbnailUrl} width="80px"/></td>
-                    <td className="align-middle" onClick={() => this.deleteBook(book.bookId)}><Close/></td>                    
+                    <td className="align-top" onClick={() => this.deleteBook(book.bookId)}><Close/></td>                    
                     </td>)
 
                 if(book.isRead){
@@ -61,7 +61,6 @@ export default class BookList extends React.Component<IProps,IState>{
     }
 
 
-
     public deleteBook = (id:any) => {
         fetch("https://bookapidevops.azurewebsites.net/api/Books/"+id,{
             method:"DELETE"
@@ -70,8 +69,6 @@ export default class BookList extends React.Component<IProps,IState>{
         
         })
     }
-
- 
 
     public handleRead = (book:any) =>{
         const toSend = [{

@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField'
 import AddCircle from '@material-ui/icons/AddCircle'
 import * as React from 'react';
 
+
 interface IProps{
     addBook:any,
 }
@@ -25,11 +26,15 @@ export default class AddBook extends React.Component<IProps,IState> {
 
     public addBook = () =>{            
         this.props.addBook(this.state.input)
+        alert("Book Added") // need to change 
+        
+        
     }
 
     public render() {
         return (
-            <div className="header">
+            <div className="add-book">
+                <h1 className = "add"> Add Book</h1>
                 <div className="container">
                     <div className="row">
                         <div className="col-10">

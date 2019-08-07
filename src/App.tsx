@@ -1,12 +1,11 @@
 import * as React from 'react';
+// import ScrollAnimation from 'react-animate-on-scroll';
 import AddBook from 'src/Components/AddBook';
 import BookList from 'src/Components/BookList';
 import SearchArea from 'src/Components/SearchDescription';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook}  from "@fortawesome/free-brands-svg-icons";
 import {faTwitter}  from "@fortawesome/free-brands-svg-icons";
-
-
 
 interface IState {
   bookList: object,
@@ -24,7 +23,7 @@ class App extends React.Component<{}, IState>{
       displayURL: "",
       displayer: null,
       updateBookList: null,
-      webdisplayURL: ""
+      webdisplayURL: ""      // need display weburl to share link to social media
      
     }
   }
@@ -61,7 +60,7 @@ class App extends React.Component<{}, IState>{
     }
   }
 
-  public testupdateURL = (url: string) => {   // grab the display url
+  public updatewebURL = (url: string) => {   // grab the display url
     if(this.state.webdisplayURL === url){    
       this.setState({webdisplayURL : ""},() => this.setState({displayURL: url}))
     }else{
@@ -69,32 +68,41 @@ class App extends React.Component<{}, IState>{
     }
   } 
 
- 
-
-  public render() {
+ public render() {
     return (<div>
-      <AddBook addBook={this.addBook} />
-      <div className="container">
-        <div className="row"> 
+     
+    <div className="container">
+        
+
+        <AddBook addBook={this.addBook} />
+
+        <div className="book"> 
               <img src={this.state.displayURL}
-              width="200"
-              height="300px"
+               width="200"
+               height="300px" 
             />
+        </div> 
+          
+        <div className = "social">
+            <td className = "fbShare" onClick={() => window.open("http://www.facebook.com/sharer/sharer.php?u="+ this.state.webdisplayURL,"width = 100", "height = 100") } > 
+            <FontAwesomeIcon icon = {faFacebook} size="2x" color="#4968ad"/>
+            </td>
+           
+            <td className = "twitterShare" onClick={() => window.open("https://twitter.com/intent/tweet?url="+ this.state.webdisplayURL, "width = 100", "height = 100") } > 
+            <FontAwesomeIcon icon = {faTwitter} size="2x" color="#49a1eb"/>
+            </td>
+        </div>
             
-            <div className = "FBShare" onClick={() => window.open("http://www.facebook.com/sharer/sharer.php?u="+ this.state.webdisplayURL,"width = 500 ", "height = 500") } > 
-            
-            <FontAwesomeIcon icon = {faFacebook} size="2x" />
-            </div>
-            <div className = "TwitterShare" onClick={() => window.open("https://twitter.com/intent/tweet?url="+ this.state.webdisplayURL) } > 
-            <FontAwesomeIcon icon = {faTwitter} size="2x" />
-            </div>
+           
       
           <div className="col-4">
-          <BookList display={this.updateURL} mount={this.listMounted} displayurl={this.testupdateURL}/>
+          <BookList display={this.updateURL} mount={this.listMounted} displayurl={this.updatewebURL}/>
           </div>
-        </div>
-        <SearchArea currentbook={this.state.displayURL} display={this.updateURL}  />
+        
+          <SearchArea currentbook={this.state.displayURL} display={this.updateURL}  />
       </div>
+      
+           
     </div>)
   }
  
