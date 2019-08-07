@@ -1,9 +1,17 @@
+.add{
+  padding-bottom: 1px;
+}
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
+.book{
+  text-align:center;
+}
 
 .booklist {
   background-color: #F5F5F5;
@@ -17,6 +25,13 @@ body {
   text-align:center;
 }
 
+.header {
+  background-color:rgb(245, 215, 45);
+  padding-top: 10px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+
 .perbook{
   max-width: 200px;
   max-height: 200px;
@@ -26,5 +41,21 @@ body {
 
 .add-book{
   text-align:center;
+}
+
+.social{
+  display: inline-block;
+  padding-right: 48%; 
+  padding-left: 48%;
+}
+
+.fbShare{
+  padding-right: 3px; 
+  padding-left: 3px;
+}
+
+.twitterShare{
+  padding-right: 3px; 
+  padding-left: 3px;
 }
 

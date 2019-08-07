@@ -35,15 +35,17 @@ export default class AddBook extends React.Component<IProps,IState> {
         return (
             <div className="add-book">
                 <h1 className = "add"> Add Book</h1>
-                <div className="container">
+                <div className="search">
                     <div className="row">
-                        <div className="col-10">
+                        <div className="">
                             <TextField
                             id= "Search-Bar"
                             className = "SearchBar"
                             placeholder="Add Google Book"
                             margin="normal"
                             variant="outlined"
+                            style = {{width: 800}} 
+                           
                             onChange = { (event: any ) => this.setState({input:event.target.value})}
                             value = {this.state.input}
                             InputProps={{
