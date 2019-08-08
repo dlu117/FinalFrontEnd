@@ -97,10 +97,10 @@ export default class SearchArea extends React.Component<IProps, IState>{
             <div className="caption-area">
                 
                 <div className="row">
-                    <div className="col-2 align-self-center">
+                    <div className="title">
                         <h1>Search Book Shelf</h1>
                     </div>
-                    <div className="col-10">
+                    <div className="field">
                         
                         <TextField
                             id="Search-Bar"

@@ -23,10 +23,10 @@ class App extends React.Component<{}, IState>{
     super(props);
     this.state = {
       bookList: [],
-      displayURL: "http://books.google.com/books/content?id=2sSMCwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72DcK8Ea7ZKW5PAi0e4Chti8RIAJyhv-N33iuPp60Us9WPC08x81PCQ3tCJ4Djg2AiqBEnH6Isy8vF948vqAen-fLfN-2S8fbuRyc_0Lgemt9HMtLoJQRb9bPhOned1wBnpZ9KK&source=gbs_api",
+      displayURL: "http://books.google.com/books/content?id=wHlDzHnt6x0C&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE718wKanhUTdKoWOqfWaNugeH4NG0jq1lYmuOY8t6QbtuMXLCMIzWs-5xgKZ1JPWjoHfXkCKfL159PNA3WBYFZYh-bX9jAw-qRjN2SMdzfrSh38qqCkBZUMmqgbLZ3-5FtMcDu9e&source=gbs_api",
       displayer: null,
       updateBookList: null,
-      webdisplayURL: "https://books.google.co.nz/books?id=2sSMCwAAQBAJ&printsec=frontcover&dq=harry+potter&hl=en&sa=X&ved=0ahUKEwjD9L72jPDjAhVEWX0KHcDMBqc4ChDoAQg0MAI#v=onepage&q=harry%20potter&f=false"      // need display weburl to share link to social media
+      webdisplayURL: "https://books.google.co.nz/books?id=wHlDzHnt6x0C&printsec=frontcover&dq=harry+potter+and+the+prisoner+of+azkaban&hl=en&sa=X&ved=0ahUKEwid9_eN0PDjAhVKSX0KHRVlDdMQ6AEIKjAA#v=onepage&q=harry%20potter%20and%20the%20prisoner%20of%20azkaban&f=false"      // need display weburl to share link to social media
      
     }
   }
@@ -78,19 +78,35 @@ class App extends React.Component<{}, IState>{
 
         <div className = "header"> <img className = "logo" src = {logo}  width="40" height="40px"/></div>
 
+        <div className = "cover">
         <AddBook addBook={this.addBook} />
+        </div>
 
-
+        
+        <div className="section2">
+          <BookList display={this.updateURL} mount={this.listMounted} displayurl={this.updatewebURL}/>
+        </div>
+        
+       
+        <table className = "test"> 
+       
+       
+        <td className="sub1" >
+        <SearchArea currentbook={this.state.displayURL} display={this.updateURL}  />
+        </td>
+       
+       
+       <td className = "sub2">
 
         <div className="book"> 
               <img src={this.state.displayURL}
                width="200"
                height="300px" 
             />
-        </div>
-
+          </div>
+        
+        
         <div className = 'social'>
-          
             <td className = "fbShare" onClick={() => window.open("http://www.facebook.com/sharer/sharer.php?u="+ this.state.webdisplayURL,"width = 100", "height = 100") } > 
             <FontAwesomeIcon icon = {faFacebook} size="2x" color="#4968ad"/>
             </td>
@@ -98,15 +114,17 @@ class App extends React.Component<{}, IState>{
             <td className = "twitterShare" onClick={() => window.open("https://twitter.com/intent/tweet?url="+ this.state.webdisplayURL, "width = 100", "height = 100") } > 
             <FontAwesomeIcon icon = {faTwitter} size="2x" color="#49a1eb" />
             </td>
-           
-        </div>
+        </div> 
+        </td>
+        </table>
+       
+        
+     
         
         
-        <div className="col-2">
-          <BookList display={this.updateURL} mount={this.listMounted} displayurl={this.updatewebURL}/>
-        </div>
-        
-          <SearchArea currentbook={this.state.displayURL} display={this.updateURL}  />
+
+
+       
       </div>
       
            
