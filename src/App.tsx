@@ -1,4 +1,4 @@
-import logo from "src/worm.jpeg"
+
 import * as React from 'react';
 // import ScrollAnimation from 'react-animate-on-scroll';
 import AddBook from 'src/Components/AddBook';
@@ -76,27 +76,19 @@ class App extends React.Component<{}, IState>{
      
     <div className="container">
 
-        <div className = "header"> <img className = "logo" src = {logo}  width="40" height="40px"/></div>
+        <div className = "header">Welcome Back </div>
 
         <div className = "cover">
         <AddBook addBook={this.addBook} />
         </div>
 
         
-        <div className="section2">
+        <div className="section1">
           <BookList display={this.updateURL} mount={this.listMounted} displayurl={this.updatewebURL}/>
         </div>
         
        
-        <table className = "test"> 
-       
-       
-        <td className="sub1" >
-        <SearchArea currentbook={this.state.displayURL} display={this.updateURL}  />
-        </td>
-       
-       
-       <td className = "sub2">
+       <div className = "section2">
 
         <div className="book"> 
               <img src={this.state.displayURL}
@@ -115,8 +107,11 @@ class App extends React.Component<{}, IState>{
             <FontAwesomeIcon icon = {faTwitter} size="2x" color="#49a1eb" />
             </td>
         </div> 
+        </div>
+       
+        <td className="section3" >
+        <SearchArea currentbook={this.state.displayURL} display={this.updateURL}  />
         </td>
-        </table>
        
         
      
