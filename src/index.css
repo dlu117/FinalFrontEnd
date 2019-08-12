@@ -1,46 +1,140 @@
-.add{
-  padding-bottom: 1px;
-}
-
-.add-book{
-  text-align:center;
-}
+/*
+App.tsx
+*/
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-}
-
-
-.booklist {
-  background-color: #F5F5F5;
-  overflow-x: scroll;
-  overflow-y: scroll;
-  height: 600px;
-  width: 100%;
-}
-
-.books-heading{
-  text-align:center;
-}
-
-.cover{
   background-image: linear-gradient(to right, rgb(195, 168, 240) , rgb(93, 175, 207));
-  padding: 10%;
+  overflow-x: hidden; 
 }
 
-.title{
-  padding-top: 10px; 
-  padding-bottom: 10px; 
+.book{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:25%;
+  height:auto;
+}
 
+.book-container{
+  text-align:center;
+  padding-top:100px;
+  padding-bottom:10px;
+}
+
+.facebook{
+  font-size:4vw;
+}
+
+.fbShare{
+  padding-right: 3px; 
+  padding-left: 3px;
+  display: inline-block;
+}
+
+.fb-user-pic{
+  width:4%;
+  height:auto;
+  float: right;
+  margin-right:10px;
+}
+
+.filler{
+  padding:5%
 }
 
 .header {
   background-color:rgb(9, 8, 12);
-  padding-top: 30px;
-  margin-bottom: 30px;
-  margin: 0 auto;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+}
+
+.login-greeting{
+  display: inline-block;
+  font-size:1vw;
+  margin-left:10px;
+  color:#F5F5F5 
+}
+
+.mainsection{
+  padding: 5%;
+}
+
+.section1{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.section2{
+  padding-bottom:50px;
+}
+
+.share-heading{
+  text-align:center;
+  font-size:3vw;
+}
+
+.social-table{
+  text-align:center;
+  margin:auto;
+}
+
+.twitter{
+  font-size:4vw;
+}
+
+.twitterShare{
+  padding-right: 3px; 
+  padding-left: 3px;
+  display: inline-block;
+}
+
+
+/*
+Add.tsx
+*/
+
+.add{
+  padding-bottom: 1px;
+  font-size:3vw;
+}
+
+.add-book{
+  text-align:center;
+  margin:auto;
+}
+
+.add-field{
+  width:70%;
+}
+
+.add-logo{
+  border-radius: 50%;
+  width:25%;
+  height:auto;
+}
+
+/*
+BookList.tsx
+*/
+.books-heading{
+  text-align:center;
+  font-size:3vw;
+}
+
+.book-icon{
+  align-items: center;
+}
+
+.booklist {
+  background-color:white;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  height: 600px;
+  width: 100%;
+  text-align:center;
 }
 
 .perbook{
@@ -50,37 +144,87 @@ body {
   display: inline-block;
 }
  
-.sub1{
-  display: inline-block;
+/*
+Login.tsx
+*/
+.login-card{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-
-.section1{
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-.section2{
-  background-image: linear-gradient(to right, rgb(195, 168, 240) , rgb(93, 175, 207));
-}
-
-
-.sub1{
-  padding-top: 5px;
-  padding-right: 300px;
-  padding-left: 50px;
-}
-
-.sub2{
-  padding-top: 100px;
-}
-
-.logo{
-  border-radius: 50%; 
-}
-
-.book{
+.login-container{
   text-align:center;
-  padding-top: 100px;
-  padding-bottom: 100px;
 }
+
+.login-grid{
+  padding-top:40px;
+}
+
+.login-header{
+  background-color:rgb(9, 8, 12);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.login-header-title{
+  padding:0;
+  font-size:1.5vw;
+  color:#F5F5F5;
+  text-align: left;
+  margin-left:10px;
+}
+
+.loginlogo{
+  padding-bottom: 10px;
+  border-radius: 50%; 
+  width:40%;
+  height:auto;
+}
+
+/*
+Search.tsx
+*/
+.searchauthor{
+  font-size:1vw;
+}
+
+.search-field{
+  width: 80%;
+  margin:auto;
+}
+
+.searchpage{
+  font-size:1vw;
+}
+.search-table{
+  text-align:center;
+}
+
+.search-table-heading{
+  font-size:1.5vw;
+}
+
+.searchtitle{
+  font-size:1vw;
+}
+
+.search-title{
+  text-align:center;
+  font-size:1vw;
+}
+
+.searchword{
+  font-size:1vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
