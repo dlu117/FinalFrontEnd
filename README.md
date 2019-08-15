@@ -15,8 +15,9 @@ Please enable microphone and disable AdBlock to allow pop-ups.
 ## Search by voice input 
 (Please speak after pressing voice button and be patient for the response, which will take around 10 seconds)
  <img src = "https://i.imgur.com/rmEToYv.jpg">
-### 3 responses possible: Gives booklist upon successful search, alert user to say something when no voice input detected or returning
-### an alert if no match found
+3 responses possible: Gives booklist upon successful search, alert user to say something when no voice input detected or returning
+an alert if no match found
+
 <img src = "https://i.imgur.com/mGOESS4.jpg">
 
 ## Responsive UI 
