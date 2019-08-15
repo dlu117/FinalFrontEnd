@@ -33,7 +33,7 @@ export default class BookList extends React.Component<IProps,IState>{
             response.forEach((book:any) => {  
                 const bookitem = (<td className= "perbook"> 
                     <td className="book-icon" onClick={() => this.isRead(book)}>{book.isRead === true?< Tick />:<TickBorder/>}</td>  
-                    <td className="align-middle" onClick={() => this.ondisplay(book.thumbnailUrl,book.webUrl)}><img src={book.thumbnailUrl} width="80px"/></td>
+                    <td className="align-middle" onDrag={() => this.ondisplay(book.thumbnailUrl,book.webUrl)}><img src={book.thumbnailUrl} width="80px"/></td>
                     <td className="book-icon" onClick={() => this.deleteBook(book.bookId)}><Close/></td>                    
                     </td>)
                 if(book.isRead){
