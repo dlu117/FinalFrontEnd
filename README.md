@@ -1,2 +1,7 @@
-# FinalFrontEnd
-Final Final Phase2 Front End
+# Web App FrontEnd
+Application endpoint: https://bookwormapp.azurewebsites.net
+
+## Social Media Authentication 
+
+
+
