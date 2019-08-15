@@ -19,6 +19,7 @@ Please enable microphone and disable AdBlock to allow pop-ups.
 <img src = "https://i.imgur.com/mGOESS4.jpg">
 
 ## Responsive UI 
+Web app is responsive on web broweser page being resized or on mobile
 ### Web 
 <img src = "https://i.imgur.com/bvzbVWq.jpg">
 <img src = "https://i.imgur.com/77yZMsD.jpg">
