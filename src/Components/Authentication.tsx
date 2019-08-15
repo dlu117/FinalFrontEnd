@@ -87,7 +87,7 @@ class Login extends React.Component<IProps,IState>{
                                  autoLoad={false}   // if true then button will open without click
                                  fields="name,email,picture"
                                  onClick={this.componentClicked}
-                                 isMobile = {true}
+                                 redirectUri = "https://bookwormapp.azurewebsites.net"
                                  callback={this.responseFacebook}/>
                                </div>
                             </CardContent>
