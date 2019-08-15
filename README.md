@@ -9,7 +9,7 @@ Please enable microphone and disable AdBlock to allow pop-ups.
 <img src = "https://i.imgur.com/lvI2IeP.jpg" >
 
 ## Social Media Integration/ Sharing Book links via Facebook or Twitter
-### Display book can be changed by dragging image on bookshelf or clicking the book or title from search result 
+Display book can be changed by dragging image on bookshelf or clicking the book or title from search result 
 <img src = "https://i.imgur.com/sfY86BP.jpg"> 
 
 ## Search by voice input 
