@@ -9,12 +9,13 @@ Please enable microphone and disable AdBlock to allow pop-ups.
 <img src = "https://i.imgur.com/lvI2IeP.jpg" >
 
 ## Social Media Integration/ Sharing Book links via Facebook or Twitter
+### Display book can be changed by dragging image on bookshelf or clicking the book or title from search result 
 <img src = "https://i.imgur.com/sfY86BP.jpg"> 
 
 ## Search by voice input 
 (Please speak after pressing voice button and be patient for the response, which will take around 10 seconds)
  <img src = "https://i.imgur.com/rmEToYv.jpg">
-#### 3 reposnses possible: Give booklist upon successful search, alert user to say something when no voice input detected and returning an #### alert of no match found 
+### 3 reposnses possible: Gives booklist upon successful search, alert user to say something when no voice input detected or returning ### an alert if no match found 
 <img src = "https://i.imgur.com/mGOESS4.jpg">
 
 ## Responsive UI 
