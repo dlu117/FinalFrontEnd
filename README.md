@@ -1,5 +1,13 @@
 # BookWorm Web App FrontEnd
-Application endpoint: https://bookwormapp.azurewebsites.net
+
+* RUN
+
+Please clone the repp
+npm install
+* As my Azure student expired last year backend endpoint trial as ended
+* Pleasse change  https://bookapidevops.azurewebsites.net to your local connection string after cloning the backend
+
+Test of frontend: https://bookwormapp.azurewebsites.net with no current connection to backend 
 
 Note: Due to this endpoint now being connected with my now live facebooklogin ID you are no longer able to launch app on local host
 
